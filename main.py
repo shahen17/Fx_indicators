@@ -45,11 +45,9 @@ def simple_moving_average_crossover(pair, time_frame):
 #INDICATOR _3
 #BOLLINGER BANDS
 def bollinger_bands(pair, time_frame):
-    symbol = pair
-    timeframe = time_frame
     periods = 15
     deviation = 2
-    data = mt5.copy_rates_from_pos(symbol, timeframe, 0, periods)
+    data = mt5.copy_rates_from_pos(pair, time_frame, 0, periods)
     df = pd.DataFrame(data)
     df.rename(
         columns={
